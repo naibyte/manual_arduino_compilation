@@ -8,9 +8,8 @@ The basic steps are:
 3. Create an ELF binary. This is ready to use in Qemu.  
   
 To upload the resultant binary to an actual Arduino, use AVRDUDE.  
-1. Extract the machine code from the ELF, which isn't usable by the Arduino by itself.
-   ```avr-objcopy -O ihex -R .eeprom hello.elf hello.ihex```
-3. Upload the extracted hex to the Arduino. ```avrdude -C /path/to/avrdude.conf -p m328p -c usbasp -b 19600 -P PORT_NAME -U flash:w:hello.ihex:i```
+4. Extract the machine code from the ELF, which isn't usable by the Arduino by itself.  ```avr-objcopy -O ihex -R .eeprom hello.elf hello.ihex```
+5. Upload the extracted hex to the Arduino. ```avrdude -C /path/to/avrdude.conf -p m328p -c usbasp -b 19600 -P PORT_NAME -U flash:w:hello.ihex:i```
 See [this useful stack overflow response (listed below) for a good write up on all of this plus AVRDUDE's options.](https://stackoverflow.com/questions/32413959/avr-gcc-with-arduino)
 
 Requirements:

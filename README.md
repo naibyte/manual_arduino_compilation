@@ -23,7 +23,7 @@ Requires Arduino Core: https://github.com/arduino/ArduinoCore-avr
 Arduino classes are often reliant on other header files. You must compile and link with each one.
 
 ## Running with Qemu
-qemu-system-avr -machine mega2560 -bios hello.elf -serial stdio  
+```qemu-system-avr -machine mega2560 -bios hello.elf -serial stdio```
 
 #### Helpful Websites
 https://stackoverflow.com/questions/32413959/avr-gcc-with-arduino  

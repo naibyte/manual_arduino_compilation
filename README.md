@@ -1,4 +1,4 @@
-# manual_arduino_compilation
+# Compiling Arduino Sketches Without Magic
 Requirements:
 ```bash
 sudo apt install avr-libc

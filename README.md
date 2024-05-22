@@ -1,6 +1,7 @@
 # Compiling Arduino Sketches Without Magic  
 The Arduino IDE handles a lot of complexity for you when you click build and upload. I was curious how the underlying build system worked so here we are.  
 *AVR-GCC* is used to compile code for the Arduino. It can target various chipsets, for example, the Arduino UNO, which uses the ATmega328P (see last link at bottom). In this example I target the ATmega2560.  
+
 The basic steps are:  
 1. Compile-only all of the code that you write, and will need to link with from the Arduino Core. This will create object files for each thing you compile.  
 2. Link all of the object files together.  

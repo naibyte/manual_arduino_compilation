@@ -12,7 +12,9 @@ To upload the resultant binary to an actual Arduino, use AVRDUDE.
 ```avr-objcopy -O ihex -R .eeprom hello.elf hello.ihex```  
 5. Upload the extracted hex to the Arduino.  
 ```avrdude -C /path/to/avrdude.conf -p m328p -c usbasp -b 19600 -P PORT_NAME -U flash:w:hello.ihex:i```  
-See [this useful stack overflow response (listed below) for a good write up on all of this plus AVRDUDE's options.](https://stackoverflow.com/questions/32413959/avr-gcc-with-arduino)
+See [this useful stack overflow response (listed below) for a good write up on all of this plus AVRDUDE's options.](https://stackoverflow.com/questions/32413959/avr-gcc-with-arduino)  
+
+The Arduino IDE abstracts the ```main()``` function away from you in the IDE. To emulate this, I have the makefile perform some string concatenation during the build process to create the needed main.cpp file. This way you can write 'normal' Arduino sketches with just the ```setup``` and ```loop``` functions by themselves, and it'll compile and run.
 
 Requirements:
 ```bash
